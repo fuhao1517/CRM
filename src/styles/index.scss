@@ -1,0 +1,541 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+@import './my-element-ui.scss';
+@import './switch.scss';
+
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+  padding: 0 !important;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.app-container {
+  .filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+    padding-bottom: 10px;
+
+    .item-input {
+      display: flex;
+      height: 46px;
+      align-items: center;
+      margin-right: 30px;
+
+      label {
+        flex: 1;
+        font-weight: normal;
+      }
+
+      .filter-item {
+        margin-left: 10px;
+        width: 210px;
+        vertical-align: middle;
+      }
+    }
+
+    .item-button {
+      .filter-item {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .el-table {
+    .el-table__row {
+      td {
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+
+.my-window {
+  .Form-container {
+    display: flex;
+
+    .row-left {
+      width: 20%;
+      height: auto;
+    }
+
+    .el-row {
+      .el-col {
+        .row-text {
+          height: auto;
+          display: flex;
+
+          span {
+            display: inline-block;
+            line-height: 36px;
+            height: 36px;
+          }
+
+          .label {
+            width: 130px;
+            text-align: right;
+            vertical-align: middle;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #606266;
+            padding: 0 12px 0 0;
+            font-weight: 700;
+          }
+
+          .star {
+            &::before {
+              box-sizing: inherit;
+              margin-right: 4px;
+              content: "*";
+              color: #F56C6C;
+            }
+          }
+
+          .value {
+            flex: 1;
+            text-align: left;
+            font-weight: normal;
+          }
+        }
+
+        .el-form-item {
+          .el-form-item__label {
+            letter-spacing: 2px;
+          }
+        }
+
+        .upload-form-item {
+          margin-bottom: 0px;
+
+          .el-form-item__content {
+            display: flex;
+
+            .uploadAgain {
+              display: inline-block;
+              width: 100%;
+              height: 36px;
+              line-height: 36px;
+            }
+          }
+        }
+      }
+    }
+
+    .row-right {
+      flex: 1;
+    }
+  }
+
+  .Form-company {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .transfer-row {
+    .transfer-col {
+      margin: 0 20px;
+      .carf-transfer {
+        border: none;
+        .el-card__header {
+          padding: 8px 20px;
+          border-bottom: none;
+          .clearfix{
+            display: flex;
+            justify-content: space-between;
+            .clearfix-left {
+              width: 45%;
+              display: flex;
+              justify-content: flex-start;
+              span {
+                display: inline-block;
+                height: 36px;
+                line-height: 36px;
+                margin-right: 10px;
+              }
+            }
+            .clearfix-right {
+              width: 45%;
+              display: flex;
+              justify-content: flex-end;
+              span {
+                display: inline-block;
+                height: 36px;
+                line-height: 36px;
+                margin-right: 10px;
+              }
+            }
+          }
+
+        }
+        .el-card__body {
+          .el-transfer {
+            .el-transfer-panel {
+              width: 42%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+// -----------------------------------
+
+.el-main {
+  padding: 0px;
+  height: 100%;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #fff inset;
+}
+
+.drawer-footer {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px solid rgb(233, 233, 233);
+  padding: 16px;
+  background: rgb(255, 255, 255);
+  text-align: right;
+  z-index: 1;
+}
+
+.pagination {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.ad-pagination__selection {
+  float: left;
+  font-weight: 400;
+  color: #606266;
+  margin-right: 10px;
+}
+
+.ad-form-query {
+
+  & .el-form-item--mini,
+  & .el-form-item--small {
+    &.el-form-item {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+//拖拽
+.user-select--none {
+  user-select: none;
+}
+
+.my-draggable__handle {
+  cursor: move
+}
+
+.my-draggable__clone {
+  position: absolute;
+  user-select: none;
+  opacity: .6;
+  z-index: 2000
+}
+
+.my-draggable__clone--translate {
+  transition: all .2s
+}
+
+//更改尺寸
+.my-resize__e {
+  position: absolute;
+  right: -5px;
+  top: 0px;
+  bottom: 0px;
+  width: 10px;
+  cursor: e-resize;
+  z-index: 2;
+}
+
+.my-resize__w {
+  position: absolute;
+  left: -5px;
+  top: 0px;
+  bottom: 0px;
+  width: 10px;
+  cursor: w-resize;
+  z-index: 2;
+}
+
+.my-resize__n {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: -5px;
+  height: 10px;
+  cursor: n-resize;
+  z-index: 2;
+}
+
+.my-resize__s {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -5px;
+  height: 10px;
+  cursor: s-resize;
+  z-index: 2;
+}
+
+.my-resize__nw {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: nw-resize;
+  z-index: 2;
+}
+
+.my-resize__ne {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: ne-resize;
+  z-index: 2;
+}
+
+.my-resize__sw {
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: sw-resize;
+  z-index: 2;
+}
+
+.my-resize__se {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  cursor: se-resize;
+  z-index: 2;
+}
+
+
+/*flex*/
+.my-flex {
+  display: block;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*dialog*/
+.el-dialog__headertool {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  i {
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      color: #409eff;
+    }
+  }
+}
+
+.el-switch__core {
+  width: 54px !important;
+}

@@ -1,0 +1,26 @@
+// 修改 el-switch 样式
+.el-switch__label {
+    position: absolute;
+    display: none;
+    color: #fff !important;
+  }
+   
+  /* 打开时文字位置设置 */
+  .el-switch__label--right {
+    z-index: 1;
+    left: 6px;
+    margin-left: 0;
+  }
+   
+  /* 关闭时文字位置设置 */
+  .el-switch__label--left {
+    z-index: 1;
+    left: 20px;
+    top: 0;
+    margin-right: 0;
+  }
+   
+  /* 显示文字 */
+  .el-switch__label.is-active {
+    display: block;
+  }
